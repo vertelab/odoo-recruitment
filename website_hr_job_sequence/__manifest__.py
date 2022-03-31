@@ -42,6 +42,7 @@
      #   "python": ["acme_tiny", "IPy",],
      #},
     'data': [
+        'data/sequence.xml',
         'views/templates.xml',
         'views/views.xml'
     ],
