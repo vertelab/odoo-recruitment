@@ -22,7 +22,7 @@
 # https://www.odoo.com/documentation/14.0/reference/module.html
 #
 {
-    'name': '',
+    'name': 'Website HR Job Sequence',
     'version': '14.0.0.0.0',
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -36,12 +36,15 @@
     'website': 'https://vertel.se/apps/odoo-',
     'images': ['static/descrition/banner.png'], # 560x280
     'license': 'AGPL-3',
-    'depends': ['hr_recruitment'],
+    'depends': ['hr_recruitment', 'website_hr_recruitment'],
      #"external_dependencies": {
      #   "bin": ["openssl",], 
      #   "python": ["acme_tiny", "IPy",],
      #},
-    'data': [],
+    'data': [
+        'views/templates.xml',
+        'views/views.xml'
+    ],
     'demo': [],
     'application': False,
     'installable': True,    

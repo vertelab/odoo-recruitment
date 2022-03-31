@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
+from unittest import result
+from odoo import models, fields, api
 
-# from odoo import models, fields, api
 
+class hr_job(models.Model):
+    _inherit = 'hr.job'
+    _description = "Job Position Sequence"
 
-class scaffold_test(models.Model):
-     _inherit = 'scaffold_test.scaffold_test'
-     _description = 'scaffold_test.scaffold_test'
+    sequence_number = fields.Integer(string='Sequence Number', readonly=True, required=True, copy=False, default=0)
+    location = fields.Char(string='Location')
 
-     name = fields.Char()
-     value = fields.Integer()
-     value2 = fields.Float(compute="_value_pc", store=True)
-     description = fields.Text()
-
-     @api.depends('value')
-     def _value_pc(self):
-         for record in self:
-             record.value2 = float(record.value) / 100
+    #Overide create function to change the sequence number
+    @api.model
+    def create(self, vals):
+        if vals.get('sequence_number', 0) == 0:
+            vals['sequence_number'] = self.env['ir.sequence'].next_by_code('hr.job.sequence') or 0
+        result = super(hr_job, self).create(vals)
+        return result
