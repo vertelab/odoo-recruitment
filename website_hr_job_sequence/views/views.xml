@@ -19,7 +19,7 @@
       <field name="inherit_id" ref="hr.view_hr_job_tree"></field>
       <field name="arch" type="xml">
         <field name="name" position="after">
-          <field name="sequence_number" />
+          <field name="sequence_number" widget="handle" readonly="1"/>
           <field name="location" />
         </field>
       </field>

@@ -1,12 +1,26 @@
 <odoo>
   <data>
-    <template id="hr_detail_sequence" name="Job Detail sequence" inherit_id="website_hr_recruitment.detail">
-      <xpath expr="//h5[hasclass('font-weight-light')]" position="before">
-        Sequence: <strong t-field="job.sequence_number"/>
-      </xpath>
-
+    <template id="hr_detail_sequence" name="Job Detail Sequence" inherit_id="website_hr_recruitment.detail">
       <xpath expr="//h5[hasclass('font-weight-light')]" position="replace">
-        <h5 class="font-weight-light" t-field="job.location"/>
+        <h5 class="font-weight-light">
+          <div t-if="z" class="d-flex align-items-baseline">
+            <i class="fa fa-map-marker fa-fw" role="img" aria-label="Address" title="Address"/>
+            <span class="w-100 o_force_ltr d-block" t-field="job.location"/>
+          </div>
+        </h5>
+      </xpath>
+    </template>
+
+    <template id="hr_detail_sequence_portal_list" name="Job Portal List Changes" inherit_id="website_hr_recruitment.index">
+      <xpath expr="//div[@class='o_job_infos mt16']" position="replace">
+        <div class="o_job_infos mt16">
+          <i t-if="job.location" class="fa fa-map-marker fa-fw" role="img" aria-label="Address" title="Address"/>
+          <span t-if="job.location" itemprop="location" t-field="job.location"/>
+          <div>
+            <i class="fa fa-fw fa-clock-o" title="Publication date" role="img" aria-label="Publication date"/>
+            <span t-field="job.write_date"/>
+          </div>
+        </div>
       </xpath>
     </template>
   </data>
