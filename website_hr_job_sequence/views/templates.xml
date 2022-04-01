@@ -3,7 +3,7 @@
     <template id="hr_detail_sequence" name="Job Detail Sequence" inherit_id="website_hr_recruitment.detail">
       <xpath expr="//h5[hasclass('font-weight-light')]" position="replace">
         <h5 class="font-weight-light">
-          <div t-if="z" class="d-flex align-items-baseline">
+          <div t-if="job.location" class="d-flex align-items-baseline">
             <i class="fa fa-map-marker fa-fw" role="img" aria-label="Address" title="Address"/>
             <span class="w-100 o_force_ltr d-block" t-field="job.location"/>
           </div>
