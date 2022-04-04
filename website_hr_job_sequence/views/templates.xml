@@ -12,6 +12,13 @@
     </template>
 
     <template id="hr_detail_sequence_portal_list" name="Job Portal List Changes" inherit_id="website_hr_recruitment.index">
+      <xpath expr="//h3[@class='text-secondary mt0 mb4']" position="after">
+        <h5>
+          Sequence: <span t-field="job.sequence_number"/>
+        </h5>
+        
+      </xpath>
+      
       <xpath expr="//div[@class='o_job_infos mt16']" position="replace">
         <div class="o_job_infos mt16">
           <i t-if="job.location" class="fa fa-map-marker fa-fw" role="img" aria-label="Address" title="Address"/>
