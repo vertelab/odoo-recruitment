@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import imp
+# import imp 
 from odoo import http, _
 from odoo.http import request
 from odoo.addons.website_hr_recruitment.controllers.main import WebsiteHrRecruitment
