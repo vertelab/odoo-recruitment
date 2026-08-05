@@ -23,7 +23,7 @@
 #
 {
     'name': 'Website HR Job Sequence',
-    'version': '14.0.0.0.0',
+    'version': '18.0.0.0.0',
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
         subtitle on modules listing or apps.odoo.com""",
