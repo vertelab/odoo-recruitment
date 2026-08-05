@@ -31,7 +31,7 @@
     <record model="ir.actions.act_window" id="hr_recruitment.action_hr_job">
       <field name="name">Job Positions</field>
       <field name="res_model">hr.job</field>
-      <field name="view_mode">kanban,form,tree</field>
+      <field name="view_mode">kanban,form,list</field>
     </record>
 
 
