@@ -33,7 +33,7 @@
     """,
     #'sequence': 1,
     'author': 'Vertel AB',
-    'website': 'https://vertel.se/apps/odoo-',
+    'website': 'https://vertel.se/apps/odoo-recruitment/website_hr_form_improvment',
     'images': ['static/description/banner.png'], # 560x280
     'license': 'AGPL-3',
     'depends': [],
